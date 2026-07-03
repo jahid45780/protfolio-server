@@ -1,19 +1,19 @@
 import { Server } from "http";
-import { envVers } from "./app/config/env";
 import mongoose from "mongoose";
 import app from "./app";
+import { envVars } from "./app/config/env";
 
 
 let server: Server
 
 const startServer = async () => {
     try {
-        console.log(envVers.NODE_ENV)
-        await mongoose.connect(envVers.DB_URL)
+        console.log(envVars.NODE_ENV)
+        await mongoose.connect(envVars.DB_URL)
         console.log("contend to DB!!");
 
-        server = app.listen(envVers.PORT,()=>{
-            console.log(`server is  running on port ${envVers.PORT}`)
+        server = app.listen(envVars.PORT,()=>{
+            console.log(`server is  running on port ${envVars.PORT}`)
         })
 
     } catch (error) {
