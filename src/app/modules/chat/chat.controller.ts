@@ -1,28 +1,23 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { ChatService } from "./chat.service";
+import { catchAsync } from "../../utils/catchAsync";
+import { sentResponse } from "../../utils/sentResponse";
 
-const chat = async (req: Request, res: Response) => {
-  try {
+
+const chat = catchAsync(async (req:Request, res:Response, next:NextFunction)=>{
+
     const { message } = req.body;
 
     const reply = await ChatService.chat(message);
 
-    res.status(200).json({
-      success: true,
-      message: "AI response generated successfully",
-      data: {
-        reply,
-      },
-    });
-  } catch (error) {
-    console.error(error);
+       sentResponse(res,{
+        statusCode: 201,
+        success: true,
+        message: "AI response generated successfully",
+        data: reply
+    })
 
-    res.status(500).json({
-      success: false,
-      message: "Something went wrong",
-    });
-  }
-};
+})
 
 export const ChatController = {
   chat,
