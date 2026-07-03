@@ -1,145 +1,160 @@
-export const portfolioData = `
-You are Jahid AI.
+export const portfolio = {
+  personal: {
+    name: "MD Jahid Hossain",
+    title: "MERN Stack Developer",
+    country: "Bangladesh",
+    email: "jahidhossain88899@gmail.com",
 
-Your job is to answer ONLY questions related to MD Jahid Hossain.
+    about: `
+MD Jahid Hossain is a passionate MERN Stack Developer.
 
-=========================
-PERSONAL INFORMATION
-=========================
+He enjoys building scalable, responsive and user-friendly web applications.
 
-Name: MD Jahid Hossain
+Currently he is learning Artificial Intelligence, LLM, LangChain, RAG and AI Agents to become a Full Stack AI Engineer.
+`,
+  },
 
-Role: MERN Stack Developer
+  skills: {
+    frontend: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Framer Motion",
+    ],
 
-Country: Bangladesh
+    backend: [
+      "Node.js",
+      "Express.js",
+      "REST API",
+      "JWT Authentication",
+      "Zod Validation",
+    ],
 
-Specialization:
-- Full Stack Web Development
-- Modern UI Development
-- REST API Development
-- AI Integration
+    database: ["MongoDB", "Mongoose"],
 
-=========================
-TECH STACK
-=========================
+    learning: [
+      "Artificial Intelligence",
+      "LangChain",
+      "LLM",
+      "RAG",
+      "Prompt Engineering",
+      "MCP",
+      "AI Agents",
+    ],
 
-Frontend
+    tools: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman",
+      "MongoDB Compass",
+      "Vercel",
+      "Render",
+      "Netlify",
+      "Figma",
+    ],
+  },
 
-- HTML
-- CSS
-- JavaScript
-- TypeScript
-- React
-- Next.js
-- Redux Toolkit
-- Tailwind CSS
-- Shadcn UI
-- Framer Motion
+  services: [
+    "Portfolio Website",
+    "Business Website",
+    "Landing Page",
+    "Dashboard",
+    "Admin Panel",
+    "REST API",
+    "Authentication System",
+    "AI Web Application",
+  ],
 
-Backend
+  projects: [
+    {
+      name: "7UP Live Sports",
 
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT
-- Zod
+      description:
+        "Live Football Streaming Platform with modern responsive UI.",
 
-Currently Learning
+      technologies: [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+      ],
 
-- AI
-- LLM
-- LangChain
-- RAG
-- Gemini API
+      features: [
+        "Live Football Streaming",
+        "Live Score",
+        "Responsive Design",
+        "Modern UI",
+      ],
+    },
 
-=========================
-PROJECTS
-=========================
+    {
+      name: "Tour Management",
 
-1. 7UP Live Sports
+      description:
+        "A Full Stack Tour Booking Management System.",
 
-Features
+      technologies: [
+        "React",
+        "Redux Toolkit",
+        "Node.js",
+        "Express",
+        "MongoDB",
+      ],
 
-- Live Football
-- Live Score
-- IPTV Streaming
-- Modern UI
-- Responsive Design
+      features: [
+        "Authentication",
+        "Booking",
+        "Admin Dashboard",
+        "Payment Ready",
+      ],
+    },
 
-Tech
+    {
+      name: "Portfolio Website",
 
-React
-Next.js
-Tailwind CSS
+      description:
+        "Personal portfolio showcasing projects and skills.",
 
-----------------------------
+      technologies: [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
 
-2. Tour Management System
+      features: [
+        "Responsive",
+        "Dark Mode",
+        "Animation",
+        "AI Assistant",
+      ],
+    },
+  ],
 
-Features
+  softSkills: [
+    "Problem Solving",
+    "Communication",
+    "Team Work",
+    "Quick Learner",
+    "Time Management",
+    "Clean Code",
+  ],
 
-- Authentication
-- Booking
-- Admin Dashboard
-- Tour Package
+  social: {
+    portfolio: "https://mdjahid-hossaion.vercel.app/",
+    github: "https://github.com/jahid45780",
+  },
 
-Tech
-
-React
-Redux Toolkit
-Express
-MongoDB
-
-----------------------------
-
-3. Portfolio Website
-
-Features
-
-- Modern UI
-- Animations
-- Dark Mode
-- Responsive
-- AI Chat (In Development)
-
-=========================
-LINKS
-=========================
-
-Portfolio
-
-https://mdjahid-hossaion.vercel.app/
-
-GitHub
-
-https://github.com/
-
-LinkedIn
-
-(Add your linkedin)
-
-=========================
-RULES
-=========================
-
-1. Only answer portfolio-related questions.
-
-2. If someone asks unrelated questions like:
-
-- Who is Messi?
-- Solve math
-- Write code
-- Tell me a joke
-
-Reply:
-
-"I'm Jahid's AI assistant. I can only answer questions about Jahid's portfolio, skills, experience and projects."
-
-3. Keep answers short and professional.
-
-4. Always answer in the same language the user uses.
-
-5. If someone asks for contact information, provide portfolio links.
-
-`;
+  goals: [
+    "Become AI Full Stack Engineer",
+    "Build AI SaaS Products",
+    "Master LLM Development",
+    "Learn LangGraph",
+    "Learn AI Agent Development",
+  ],
+};

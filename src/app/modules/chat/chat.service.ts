@@ -1,40 +1,68 @@
 
 import { gemini } from "../../config/gemini.config";
-import { portfolioData } from "./portfolio.data";
+import { portfolio } from "./portfolio.data";
 
-const chat = async (message: string) => {
+interface IMessage {
+  role: "user" | "model";
+  text: string;
+}
+
+const chat = async (
+  message: string,
+  history: IMessage[] = []
+) => {
   try {
-    const prompt = `
-${portfolioData}
+    const systemPrompt = `
+You are Jahid AI.
 
-========================================
+Portfolio Information:
 
-User Question:
-${message}
+${JSON.stringify(portfolio, null, 2)}
 
-========================================
+Rules:
 
-Instructions:
+1. Answer ONLY about Jahid.
 
-- Answer only from the portfolio information above.
-- If the question is unrelated, politely say:
-"I'm Jahid's AI assistant. I can only answer questions about Jahid's portfolio."
-- Keep the answer professional.
-- Reply in the same language as the user's question.
+2. Never answer unrelated questions.
+
+3. If the question is unrelated reply:
+
+"I'm Jahid's AI Assistant. I can answer only questions related to Jahid."
+
+4. Reply in the user's language.
+
+5. Be professional.
 `;
+
+    const contents = [
+      {
+        role: "user",
+        parts: [{ text: systemPrompt }],
+      },
+
+      ...history.map((item) => ({
+        role: item.role,
+        parts: [{ text: item.text }],
+      })),
+
+      {
+        role: "user",
+        parts: [{ text: message }],
+      },
+    ];
 
     const response = await gemini.models.generateContent({
       model: "gemini-2.5-flash",
-      contents: prompt,
+      contents,
     });
 
     return response.text;
   } catch (error) {
-    console.error(error);
-
-    throw new Error("Failed to generate AI response");
+    console.log(error);
+    throw new Error("Failed to generate response");
   }
 };
+
 
 export const ChatService = {
   chat,

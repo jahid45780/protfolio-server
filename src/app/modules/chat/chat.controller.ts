@@ -6,9 +6,9 @@ import { sentResponse } from "../../utils/sentResponse";
 
 const chat = catchAsync(async (req:Request, res:Response, next:NextFunction)=>{
 
-    const { message } = req.body;
+   const { message, history = [] } = req.body;
 
-    const reply = await ChatService.chat(message);
+    const reply = await ChatService.chat(message, history);
 
        sentResponse(res,{
         statusCode: 201,
